@@ -7,139 +7,271 @@
 	},
 	"item": [
 		{
-			"name": "samples",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/sample?page=1&limit=10",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"sample"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
+			"name": "SAMPLE",
+			"item": [
+				{
+					"name": "samples",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/sample?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sample"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sample by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/sample/644bde9ad81398981698b426",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sample",
+								"644bde9ad81398981698b426"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sample",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/sample/644bde9ad81398981698b426",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sample",
+								"644bde9ad81398981698b426"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search sample by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/sample/title/trever",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sample",
+								"title",
+								"trever"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sample",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Prueba title\",\n    \"subtitle\": \"Prueba subtitle\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "limit",
-							"value": "10"
+						"url": {
+							"raw": "{{base_url}}/sample",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sample"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "sample by ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/sample/644bde9ad81398981698b426",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"sample",
-						"644bde9ad81398981698b426"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "sample",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/sample/644bde9ad81398981698b426",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"sample",
-						"644bde9ad81398981698b426"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Search sample by title",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/sample/title/trever",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"sample",
-						"title",
-						"trever"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "sample",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"Prueba title\",\n    \"subtitle\": \"Prueba subtitle\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{base_url}}/sample",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"sample"
-					]
+				{
+					"name": "sample",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Forest Gump\",\n    \"subtitle\": \"Prueba subtitle 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/sample/644bde9ad81398981698b427",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sample",
+								"644bde9ad81398981698b427"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "sample",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"Forest Gump\",\n    \"subtitle\": \"Prueba subtitle 2\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "SUBSAMPLE",
+			"item": [
+				{
+					"name": "subsamples",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subsample?page=1&limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"subsample"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{base_url}}/sample/644bde9ad81398981698b427",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"sample",
-						"644bde9ad81398981698b427"
-					]
+				{
+					"name": "subsample by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subsample/64551f6980f3e0e73dff7bf7?includeParents=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"subsample",
+								"64551f6980f3e0e73dff7bf7"
+							],
+							"query": [
+								{
+									"key": "includeParents",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subsample",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subsample/644bde9ad81398981698b426",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"subsample",
+								"644bde9ad81398981698b426"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subsample",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Prueba title\",\n    \"subtitle\": \"Prueba subtitle\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/subsample",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"subsample"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subsample",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Forest Gump\",\n    \"subtitle\": \"Prueba subtitle 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/subsample/644bde9ad81398981698b427",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"subsample",
+								"644bde9ad81398981698b427"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	],
 	"event": [
