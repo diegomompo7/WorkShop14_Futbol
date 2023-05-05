@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { SubSample } = require("./SubSample.js");
 
 const sampleSchema = new Schema(
   {
@@ -10,6 +11,11 @@ const sampleSchema = new Schema(
     subtitle: {
       type: String,
       required: true,
+    },
+    child: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+      ref: SubSample,
     },
   },
   {
