@@ -35,5 +35,5 @@ const matchSchema = new Schema(
   }
 );
 
-const Match = mongoose.model("Match", matchSchema, "matchs");
+const Match = mongoose.model("Match", matchSchema, "matches");
 module.exports = { Match };
