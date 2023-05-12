@@ -18,6 +18,10 @@ const playerSchema = new Schema(
     number : {
       type: Number,
       required: true,
+    },
+    team : {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Team",
     }
   },
   {
