@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const { SubSample } = require("./SubSaple.js");
+const { SubSample } = require("./SubSample.js");
 
 const sampleSchema = new Schema(
   {
