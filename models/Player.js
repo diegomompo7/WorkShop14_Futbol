@@ -12,18 +12,18 @@ const playerSchema = new Schema(
       type: String,
       required: true,
     },
-    positionPrefer : {
+    positionPrefer: {
       type: String,
       required: true,
     },
-    number : {
+    number: {
       type: Number,
       required: true,
     },
-    team : {
+    team: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Team",
-    }
+    },
   },
   {
     timestamps: true,
