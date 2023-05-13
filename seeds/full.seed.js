@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const { connect } = require("../db.js");
 const { Team } = require("../models/Team.js");
 const { Player } = require("../models/Player.js");
-const { generateRandom } = require("../utils.js");
 
 let playerList = [
   {
