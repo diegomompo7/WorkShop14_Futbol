@@ -2,6 +2,10 @@ const express = require("express");
 const { playerRouter } = require("./routes/player.routes.js");
 const { teamRouter } = require("./routes/team.routes.js");
 const { matchRouter } = require("./routes/match.routes.js");
+const cors = require("cors");
+
+// Listado para CORS de paginas aceptadas
+const corsWhiteList = ["http://localhost:3000", "http://localhost:3001"];
 
 // Conexión a la BBDD
 const { connect } = require("./db.js");
@@ -12,6 +16,7 @@ const PORT = 3000;
 const server = express();
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
+server.use(cors({ origin: corsWhiteList }));
 
 // Rutas
 const router = express.Router();
