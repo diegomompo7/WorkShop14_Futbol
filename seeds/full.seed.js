@@ -151,31 +151,28 @@ playerSeed();
 let teamList = [
   {
     name: "Valley FC",
-    foundation: 2010,
+    fundation: 2010,
     city: "Madrid",
   },
   {
     name: "La Isla CD",
-    foundation: 1975,
+    fundation: 1975,
     city: "San Fernando",
   },
   {
     name: "UD Ferrol",
-    foundation: 1980,
+    fundation: 1980,
     city: "Ferrol",
   },
   {
     name: "Pulinhos FC",
-    foundation: 2016,
+    fundation: 2016,
     city: "Cadiz",
   },
 ];
 
 const teamSeed = async () => {
   try {
-    // CONEXION
-    await connect();
-
     // BORRADO
     await Team.collection.drop();
     console.log("Borrados equipos");
@@ -194,11 +191,13 @@ teamSeed();
 
 const allReslationsSeed = async () => {
   try {
-    await connect();
     console.log("Conectado y listo para crear relaciones");
 
     const players = await Player.find();
     const teams = await Team.find();
+
+    console.log(players.length)
+    console.log(teams.length)
 
     if (!players.length || !teams.length) {
       console.error("Debe haber equipos y jugadores en la base de datos para poder relacionarlos. Parece que fala alguno de ellos.");
@@ -206,6 +205,7 @@ const allReslationsSeed = async () => {
     } else {
       // Relaciona aleatoriamente jugadores a equipos
       try {
+        console.log("Ha entrado para asignar futbolistas y equipos")
         const playersPerTeam = Math.floor(players.length / teams.length);
         let playersAssigned = 0;
 

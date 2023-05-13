@@ -1,6 +1,7 @@
 const express = require("express");
-const { sampleRouter } = require("./routes/sample.routes.js");
-const { subSampleRouter } = require("./routes/subsample.routes.js");
+const { playerRouter } = require("./routes/player.routes.js");
+const { teamRouter } = require("./routes/team.routes.js");
+const { matchRouter } = require("./routes/match.routes.js");
 
 // Conexión a la BBDD
 const { connect } = require("./db.js");
@@ -22,8 +23,9 @@ router.get("*", (req, res) => {
 });
 
 // Usamos las rutas
-server.use("/sample", sampleRouter);
-server.use("/subsample", subSampleRouter);
+server.use("/player", playerRouter);
+server.use("/team", teamRouter);
+server.use("/match", matchRouter);
 server.use("/", router);
 
 server.listen(PORT, () => {

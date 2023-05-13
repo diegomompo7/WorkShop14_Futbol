@@ -27,7 +27,7 @@ const matchSchema = new Schema(
     },
     matchDate: {
         type: Date,
-        required: true
+        required: false
     },
   },
   {
