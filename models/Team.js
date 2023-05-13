@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const playerSchema = new Schema(
+const teamSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
     },
-    foundation: {
+    fundation: {
       type: Number,
       required: true,
     },
@@ -21,5 +21,5 @@ const playerSchema = new Schema(
   }
 );
 
-const Artist = mongoose.model("Team", artistSchema, "teams");
+const Team = mongoose.model("Team", teamSchema, "teams");
 module.exports = { Team };
