@@ -204,22 +204,21 @@ const allReslationsSeed = async () => {
       console.error("Debe haber equipos y jugadores en la base de datos para poder relacionarlos. Parece que fala alguno de ellos.");
       return;
     } else {
-      // Relaciona aleatoriamente canciones a artistas
+      // Relaciona aleatoriamente jugadores a equipos
       try {
         const playersPerTeam = Math.floor(players.length / teams.length);
-    let playersAssigned = 0;
+        let playersAssigned = 0;
 
-    try {
-      for (let i = 0; i < teams.length; i++) {
-        const team = teams[i];
+        for (let i = 0; i < teams.length; i++) {
+          const team = teams[i];
 
-        for (let j = 0; j < playersPerTeam; j++) {
-          const player = players[playersAssigned];
-          player.team = team.id;
-          await player.save();
-          playersAssigned++;
+          for (let j = 0; j < playersPerTeam; j++) {
+            const player = players[playersAssigned];
+            player.team = team.id;
+            await player.save();
+            playersAssigned++;
+          }
         }
-      }
         console.log("Relaciones entre equipos-jugadores creadas correctamente.");
       } catch (error) {
         console.status(500).json(error);
