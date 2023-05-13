@@ -23,21 +23,22 @@ const createMatches = async () => {
     const matches = [];
     for (let i = 0; i < teams.length; i++) {
       for (let j = i + 1; j < teams.length; j++) {
+        console.log(teams[i].name, teams[j].name)
         matches.push({
           localTeam: teams[i]._id,
           awayTeam: teams[j]._id,
           goalsLocalTeam: 0,
           goalsAwayTeam: 0,
           isPlayed: false,
-          matchDate: null,
+          matchDate: Date.now(),
         });
         matches.push({
           localTeam: teams[j]._id,
-          visitorTeam: teams[i]._id,
+          awayTeam: teams[i]._id,
           goalsLocalTeam: 0,
           goalsAwayTeam: 0,
           isPlayed: false,
-          matchDate: null,
+          matchDate: Date.now(),
         });
       }
     }
@@ -47,7 +48,8 @@ const createMatches = async () => {
 
     console.log("Partidos creados correctamente.");
   } catch (error) {
-    console.status(500).json(error);
+    //console.status(500).json(error);
+    console.log(error)
   } finally {
     mongoose.disconnect();
   }
