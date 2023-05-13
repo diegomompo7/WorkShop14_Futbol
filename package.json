@@ -1,6 +1,6 @@
 {
   "name": "simple-template",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Hola este es el repo de template",
   "main": "index.js",
   "scripts": {
