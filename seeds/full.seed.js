@@ -137,14 +137,12 @@ const playerSeed = async () => {
     console.log("Borrados jugadores");
 
     // CREACION DE LOS OTROS DOCUMENTOS
-    playerList = artistList.map((elem) => new Player(elem));
+    playerList = playerList.map((elem) => new Player(elem));
 
     await Player.insertMany(playerList);
     console.log("Creados jugadores correctamente");
   } catch (error) {
     console.error(error);
-  } finally {
-    mongoose.disconnect();
   }
 };
 
@@ -189,8 +187,6 @@ const teamSeed = async () => {
     console.log("Creados equipos correctamente");
   } catch (error) {
     console.error(error);
-  } finally {
-    mongoose.disconnect();
   }
 };
 
@@ -210,12 +206,20 @@ const allReslationsSeed = async () => {
     } else {
       // Relaciona aleatoriamente canciones a artistas
       try {
-        for (let i = 0; i < player.length; i++) {
-          const teams = teams[i];
-          const randomTeam = teams[generateRandom(0, teams.length - 1)];
-          player.team = randomTeam.id;
+        const playersPerTeam = Math.floor(players.length / teams.length);
+    let playersAssigned = 0;
+
+    try {
+      for (let i = 0; i < teams.length; i++) {
+        const team = teams[i];
+
+        for (let j = 0; j < playersPerTeam; j++) {
+          const player = players[playersAssigned];
+          player.team = team.id;
           await player.save();
+          playersAssigned++;
         }
+      }
         console.log("Relaciones entre equipos-jugadores creadas correctamente.");
       } catch (error) {
         console.status(500).json(error);
