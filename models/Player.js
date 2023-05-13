@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// Esquema jugador
 const playerSchema = new Schema(
   {
     firstName: {
