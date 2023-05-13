@@ -5,7 +5,7 @@ const { matchRouter } = require("./routes/match.routes.js");
 const cors = require("cors");
 
 // Listado para CORS de paginas aceptadas
-const corsWhiteList = ["http://localhost:3000", "http://localhost:3001"];
+const corsWhiteList = ["http://localhost:3000", "http://localhost:3001", "https://work-shop14-futbol.vercel.app/"];
 
 // Conexión a la BBDD
 const { connect } = require("./db.js");
